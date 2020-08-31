@@ -1,0 +1,47 @@
+.side {
+  z-index: 5;
+
+  display: grid;
+  grid-template-rows: 2fr 4fr;
+  border: 1px solid $color-white;
+  position: fixed;
+  height: 100%;
+  width: $sidebar-width;
+  @include mq("desktop",max) {
+    position: relative;
+    height: 8rem;
+    width: 100%;
+    display: flex;
+    border:none;
+    justify-content: space-between;
+  }
+  &-menu_ul{
+    display:flex;
+    flex-direction: column;
+    & li{
+      border-bottom: 1px solid $color-white;
+      @include mq("desktop",max) {
+      border:none;
+      padding: 2rem;
+      }
+    }
+    @include mq("desktop",max) {
+      flex-direction: row;
+      width: 100%;
+    }
+  }
+  &_logo {
+    z-index: 2;
+    border-bottom: 1px solid $color-white;
+    transition: background-color 0.5s;
+    &:hover {
+      background-color: $color-white !important;
+      & .fil0 {
+        fill: $color-main !important;
+      }
+    }
+    @include mq("desktop",max) {
+      border-bottom: none;
+    }
+  }
+}

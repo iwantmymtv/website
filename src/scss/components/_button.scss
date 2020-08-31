@@ -1,5 +1,17 @@
 
 
+.button {
+	padding:2rem 4rem;
+	border:2px solid $color-white;
+	color: $color-white;
+	font-size:3rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	background-color: rgba($color-sec,0.4);
+	z-index: 2;
+	cursor: pointer;
+}
+
 .button16 {
 	color: rgba(255,255,255,1);
 	-webkit-transition: all 0.3s;

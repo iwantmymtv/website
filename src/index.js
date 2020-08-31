@@ -4,12 +4,17 @@ import { GLTFLoader} from './examples/jsm/loaders/GLTFLoader'
 
 import * as THREE from 'three';
 
+//3d models
 import buildings3d from './assets/buildings.glb';
 import cart3d from './assets/cart.glb';
 import camera3d from './assets/camera.glb';
 import email3d from './assets/email.glb';
 import landing3d from './assets/landing.glb';
 
+//pages
+import {mainPage} from './pages/mainPage'
+import {webshopPage} from './pages/webshopPage'
+import {contactPage} from './pages/contactPage'
 
 // these need to be accessed inside more than one function so we'll declare them first
 let container;
@@ -121,7 +126,6 @@ function onMouseMove(event) {
   event.preventDefault();
   activeObj.rotation.y += event.movementX/5000
   activeObj.rotation.x += event.movementY/5000
-  //activeObj.position.y -= event.movementY/1000
 };
 
 const webshopLink = document.getElementById('webshop')
@@ -131,16 +135,8 @@ const contactLink = document.getElementById('contact')
 const mainContent = document.getElementById('main-content')
 const logo = document.getElementById('logo')
 
-const mainPage = `
-<h1><span class="bb-sec-6 ">MODERN</span> </h1>
-<h1><span class="bb-sec-6">WEBES</span> </h1>
-<h1><span class="bb-sec-6">MEGOLDÁSOK</span> </h1>
-`
 
-const webshop = `
-<h1><span class="bb-sec-6 ">WEBSHOP</span> </h1>
-<h1><span class="bb-sec-6">VALAMI</span> </h1>
-`
+
 const landing = `
 <h3><span class="bb-sec-6 ">LANDING PAGE</span> </h3>
 <h3><span class="bb-sec-6 ">LANDING PAGE</span> </h3>
@@ -154,15 +150,14 @@ const landing = `
 const addModelOnClick = (selector,model,content,pos) =>{
   selector.addEventListener('click', (e) => {
     e.preventDefault()
-    console.log('hello webshop')
     scene.remove(activeObj)
     loadModels(model,[pos[0],pos[1],pos[2]])
     mainContent.innerHTML = content
   })
 }
 
-addModelOnClick(webshopLink,cart3d,webshop,[5,-4,0])
+addModelOnClick(webshopLink,cart3d,webshopPage,[5,-4,0])
 addModelOnClick(landingLink,landing3d,landing,[6,-4.5,-1])
 addModelOnClick(customLink,camera3d,landing,[6,-1,-1])
-addModelOnClick(contactLink,email3d,landing,[5,-4,0])
+addModelOnClick(contactLink,email3d,contactPage,[5,-4,0])
 addModelOnClick(logo,buildings3d,mainPage,[2,-2,0])

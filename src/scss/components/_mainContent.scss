@@ -1,0 +1,46 @@
+.main {
+  &_text {
+    z-index: 5 !important;
+    margin-left: $sidebar-width;
+    width: 100vw - $sidebar-width ;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+    @include mq("desktop",max) {
+      width: 100vw;
+      margin-top:5rem;
+      min-height: 100%;
+      margin-left: 0rem;
+      justify-content: center;
+      text-align: center;
+    }
+    & p {
+      margin-top: 5rem;
+    }
+
+    & h1 {
+      font-size: 15.5rem;
+      margin-bottom: 2rem;
+      @include mq("extra-wide",min) {
+        font-size: 20rem;
+        margin-bottom: 2rem;
+      }
+      @include mq("desktop",max) {
+        font-size: 13rem;
+        margin-bottom: 1rem;
+      }
+      @include mq("tablet-wide",max) {
+        margin-left: 0rem;
+        font-size: 10rem;
+        margin-bottom: 1rem;
+      }
+      @include mq("phone-wide",max) {
+        font-size: 7rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

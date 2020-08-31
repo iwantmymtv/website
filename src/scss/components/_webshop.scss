@@ -1,0 +1,27 @@
+.ws{
+  display: flex;
+  flex-direction: column;
+  //justify-content: center;
+  //align-items: center;
+  /* &-mainText{
+    opacity: 0.8;
+  } */
+  
+  & img {
+    border: 2px solid $color-white;
+    max-width: 100% !important;
+    opacity: 0.7;
+  }
+  &-h5 {
+    margin-top: 8rem;
+    margin-bottom: 5rem;
+    & h4{
+      color: lighten($color-main,80%);
+      width: auto;
+      margin-bottom: 2rem;
+    }
+    & h5 {
+      padding: 1rem;
+    }
+  }
+}
