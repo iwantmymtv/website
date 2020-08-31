@@ -4,10 +4,16 @@ main{
 
 
 #scene-container {
+  margin-left: $sidebar-width;
+  width: 100vw - $sidebar-width;
   position: fixed;
   top: 0;
   //border:2px solid $color-white;
   z-index: -1;
+  @include mq("desktop",max) {
+    margin-left: 0rem;
+    width: 100vw ;
+  }
 }
 .d-none-d{
   @include mq("desktop",max) {

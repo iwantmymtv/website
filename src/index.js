@@ -65,7 +65,7 @@ function createLights() {
   scene.add( ambientLight, mainLight );
 }
 
-function loadModels(obj3d=buildings3d,objPos = [2,-2,0]) {
+function loadModels(obj3d=buildings3d,objPos = [0,-2,0]) {
   const loader = new GLTFLoader();
   // so that they can be individually placed around the scene
   const onLoad = ( gltf, position ) => {
@@ -156,8 +156,25 @@ const addModelOnClick = (selector,model,content,pos) =>{
   })
 }
 
-addModelOnClick(webshopLink,cart3d,webshopPage,[5,-4,0])
-addModelOnClick(landingLink,landing3d,landing,[6,-4.5,-1])
-addModelOnClick(customLink,camera3d,landing,[6,-1,-1])
-addModelOnClick(contactLink,email3d,contactPage,[5,-4,0])
-addModelOnClick(logo,buildings3d,mainPage,[2,-2,0])
+addModelOnClick(webshopLink,cart3d,webshopPage,[1,-4,1])
+addModelOnClick(landingLink,landing3d,landing,[1,-4.5,-1])
+addModelOnClick(customLink,camera3d,landing,[1,-1,-1])
+addModelOnClick(contactLink,email3d,contactPage,[3,-4,0])
+addModelOnClick(logo,buildings3d,mainPage,[0,-2,0])
+
+
+const burger = document.getElementById('burger')
+const menuList = document.getElementById('menu-list')
+const menuButtons = document.getElementsByClassName('buttonLi')
+
+burger.addEventListener('click',() => {
+  burger.classList.toggle('open')
+  menuList.classList.toggle('side-menu_ul_phone')
+})
+
+Array.from(menuButtons).forEach(function(element) {
+  element.addEventListener('click', () => {
+    burger.classList.remove('open')
+    menuList.classList.remove('side-menu_ul_phone')
+  });
+});

@@ -18,6 +18,7 @@
   &-menu_ul{
     display:flex;
     flex-direction: column;
+    transition: 2s background-color;
     & li{
       border-bottom: 1px solid $color-white;
       @include mq("desktop",max) {
@@ -28,6 +29,21 @@
     @include mq("desktop",max) {
       flex-direction: row;
       width: 100%;
+    }
+    @include mq("tablet-wide",max) {
+      display: none;
+    }
+    
+    
+    &_phone{
+      transition: 2s background-color;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      background-color: $color-main;
     }
   }
   &_logo {
@@ -40,8 +56,122 @@
         fill: $color-main !important;
       }
     }
+    & svg{
+      width: 12rem;
+      @include mq("desktop",max) {
+        width: 8rem;
+      }
+    }
     @include mq("desktop",max) {
       border-bottom: none;
+      background-color: transparent !important;
+      & svg{
+       padding: 1rem;
+      }
+      .fil0 {
+        fill: $color-white !important;
+      }
+    }
+  }
+}
+
+
+.burger.burger-squeeze {
+  .burger-lines {
+    &,
+    &:after,
+    &:before {
+      transition: .2s top .2s, .1s left, .2s transform, .4s background-color .2s;
+    }
+    &:after,
+    &:before {
+      width: 2em;
+    }
+  }
+  
+  &.open {
+    .burger-lines {
+      &,
+      &:after,
+      &:before {
+        transition: .2s background-color, .2s top, .2s left, .2s transform .15s;
+      }
+      & {
+        background-color: transparent;
+      }
+      &:before,
+      &:after {
+        left: 0.5em;
+        top: 0px;
+      }
+      &:before {
+        transform: rotate(-45deg);
+      }
+      &:after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+.burger {
+  position: fixed;
+  z-index: 15;
+  top: 2rem;
+  right: 2rem;
+  height: 3em;
+  width: 3em;
+  position: relative;
+  font-size: 12px;
+  cursor: pointer;
+  transition: .2s all;
+  -webkit-tap-highlight-color: transparent;
+
+  @include mq("tablet-wide",min) {
+    display: none;
+  }
+
+  .burger-lines:after {
+    left: 0;
+    top: -1em;
+  }
+  .burger-lines:before {
+    left: 1em;
+    top: 1em;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 150%;
+    width: 150%;
+    top: -25%;
+    left: -25%;
+  }
+  .burger-lines {
+    top: 50%;
+    margin-top: -0.125em;
+    &,
+    &:after,
+    &:before {
+      pointer-events: none;
+      display: block;
+      content: '';
+      width: 100%;
+      border-radius: 0.25em;
+      background-color: white;
+      height: 0.25em;
+      position: absolute;
+      transform: rotate(0);
+    }
+    &:after {
+      left: 0;
+      top: -1em;
+    }
+    &:before {
+      left: 1em;
+      top: 1em;
     }
   }
 }
