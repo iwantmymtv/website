@@ -1,0 +1,61 @@
+$placeholder-color: rgb(121, 117, 117);
+$form-color: rgb(179, 179, 179);
+$form-border:rgb(66, 66, 66);
+
+$color-sec:#4C34FB;
+//$color-main:#51d0de;
+$color-main:#02000e;
+$color-white:#eeeeee;
+
+$colors: (
+  main: $color-main,
+  sec: $color-sec,
+  "white": $color-white
+);
+
+$attributes: (
+  bg : "background-color",
+  text: "color",
+);
+
+.fil0 {
+  fill:$color-main;
+  transition: fill 0.3s;
+}
+
+@mixin colors {
+  @each $name,$attr in $attributes{
+    @each $n, $c in $colors {
+      .#{$name}-#{$n}{
+        #{$attr}: $c !important;  
+      }
+    }
+  }  
+}
+
+@mixin borders {
+  @for $i from 1 through 6{
+    @each $n, $c in $colors {
+      .b-#{$n}-#{$i} {
+        border: $i + px solid $c !important;  
+      }
+      .bl-#{$n}-#{$i} {
+        border-left: $i + px solid $c !important;  
+      }
+      .br-#{$n}-#{$i} {
+        border-right: $i + px solid $c !important;  
+      }
+      .bb-#{$n}-#{$i} {
+        border-bottom: $i + px solid $c !important;  
+      }
+      .bt-#{$n}-#{$i} {
+        border-top: $i + px solid $c !important;  
+      }
+      
+    }
+  }
+}
+
+
+@include colors;
+@include borders;

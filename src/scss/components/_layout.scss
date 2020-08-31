@@ -1,0 +1,108 @@
+main{
+	min-height: 100vh;
+	.side {
+    z-index: 5;
+  
+    display: grid;
+    grid-template-rows: 2fr 4fr;
+    border: 1px solid $color-white;
+    position: fixed;
+    height: 100%;
+    width: 30rem;
+    @include mq("desktop",max) {
+      position: relative;
+      height: 8rem;
+      width: 100%;
+      display: flex;
+      border:none;
+      justify-content: space-between;
+    }
+    &-menu_ul{
+      display:flex;
+      flex-direction: column;
+      & li{
+        border-bottom: 1px solid $color-white;
+        @include mq("desktop",max) {
+        border:none;
+        padding: 2rem;
+        }
+      }
+      @include mq("desktop",max) {
+        flex-direction: row;
+        width: 100%;
+      }
+    }
+    &_logo {
+      z-index: 2;
+      border-bottom: 1px solid $color-white;
+      transition: background-color 0.5s;
+      &:hover {
+        background-color: $color-white !important;
+        & .fil0 {
+          fill: $color-main !important;
+        }
+      }
+      @include mq("desktop",max) {
+        border-bottom: none;
+      }
+    }
+  }
+  
+  .main {
+    &_text {
+      z-index: 5 !important;
+      margin-left: 38rem;
+      width: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      @include mq("desktop",max) {
+        margin-top:5rem;
+        min-height: 100%;
+        margin-left: 0rem;
+        justify-content: center;
+        text-align: center;
+      }
+      & p {
+        margin-top: 5rem;
+      }
+  
+      & h1 {
+        font-size: 15.5rem;
+        margin-bottom: 2rem;
+        @include mq("extra-wide",min) {
+          font-size: 20rem;
+          margin-bottom: 2rem;
+        }
+        @include mq("desktop",max) {
+          font-size: 13rem;
+          margin-bottom: 1rem;
+        }
+        @include mq("tablet-wide",max) {
+          margin-left: 0rem;
+          font-size: 10rem;
+          margin-bottom: 1rem;
+        }
+        @include mq("phone-wide",max) {
+          font-size: 7rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+
+#scene-container {
+  position: fixed;
+  top: 0;
+  //border:2px solid $color-white;
+  z-index: -1;
+}
+.d-none-d{
+  @include mq("desktop",max) {
+    display:none !important;
+  }
+}

@@ -1,0 +1,111 @@
+
+
+label {
+	color: $form-color;
+}
+input[type=text],
+input[type=email],
+input[type=password],
+textarea,select ,option{
+	width: 100%;
+	padding: 2rem 0.2rem;
+	margin: 0.2rem 0;
+	border: none;
+  box-sizing: border-box;
+  padding: 1rem 0;
+	border: 1px solid $form-border;
+	box-sizing: border-box;
+	background-color: rgba(233, 233, 233, 0.123);
+	@include mq("tablet-small",max) {
+		padding: 1rem 0;
+		margin: 0.1rem 0;
+	}
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+textarea:focus {
+	//outline: none;
+	border: none;
+  border: 1.4px solid rgb(22, 22, 22);
+	background-color: rgba(255, 255, 255, 0.281);
+}
+::placeholder {
+	font-style: default;
+	color: $placeholder-color;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+	opacity: 1;
+	height: 5rem;
+	transform: translateX(2rem);
+}
+
+input[type=number] {
+	color: grey;
+	font-size: 2rem;
+	width: 8rem;
+	border: 1px solid $form-border;
+	padding: 0.5rem 2rem;
+}
+input[type=number]:focus {
+	outline: none;
+}
+
+textarea {
+	font-style: default;
+	min-height: 10rem;
+}
+
+
+
+//radio style
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+	position: absolute;
+	left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+	position: relative;
+	padding-left: 28px;
+	cursor: pointer;
+	line-height: 20px;
+	display: inline-block;
+	color: $form-color;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 18px;
+	height: 18px;
+	border: 1px solid #ddd;
+	border-radius: 100%;
+	background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+	content: '';
+	width: 12px;
+	height: 12px;
+	background: grey;
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	border-radius: 100%;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+	opacity: 0;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
