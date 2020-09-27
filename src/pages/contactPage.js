@@ -1,12 +1,11 @@
 export const contactPage = `
     <div class="contact">
-    <h4><span >KAPCSOLAT</span> </h4>
+    <h1 class="bb-sec-6 ">KAPCSOLAT </h1>
     <h5>peter.taught@gmail.com</h5>
-
-    <form>
+    <form id="contactForm" action="https://formspree.io/xqkgaeog" method="POST">
       <div class="input-group">
-        <label for="email">Email</label>
-        <input type="email" name="email">
+        <label for="_replyto">Email</label>
+        <input type="email" name="_replyto">
       </div>
       <div class="input-group">
         <label for="subject">Tárgy</label>
@@ -17,10 +16,9 @@ export const contactPage = `
         <textarea name="message" id="" cols="30" rows="10"></textarea>
       </div>
       <div class="input-group">
-      <button class="button button16">Küldés</button
+      <button id="contactButton" class="button button16">Küldés</button
       </div>
     </form>
-  
+    <h5 id="contactStatus"></h5>
     </div>
-
 `

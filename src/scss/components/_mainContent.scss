@@ -20,26 +20,27 @@
       margin-top: 5rem;
     }
 
-    & h1 {
-      font-size: 15.5rem;
-      margin-bottom: 2rem;
-      @include mq("extra-wide",min) {
-        font-size: 20rem;
-        margin-bottom: 2rem;
-      }
-      @include mq("desktop",max) {
-        font-size: 13rem;
-        margin-bottom: 1rem;
-      }
-      @include mq("tablet-wide",max) {
-        margin-left: 0rem;
-        font-size: 10rem;
-        margin-bottom: 1rem;
-      }
-      @include mq("phone-wide",max) {
-        font-size: 7rem;
-        margin-bottom: 1rem;
-      }
-    }
+    
+  }
+}
+h1 {
+  font-size: 15.5rem;
+  margin-bottom: 2rem;
+  @include mq("extra-wide",min) {
+    font-size: 20rem;
+    margin-bottom: 2rem;
+  }
+  @include mq("desktop",max) {
+    font-size: 13rem;
+    margin-bottom: 1rem;
+  }
+  @include mq("tablet-wide",max) {
+    margin-left: 0rem;
+    font-size: 10rem;
+    margin-bottom: 1rem;
+  }
+  @include mq("phone-wide",max) {
+    font-size: 7rem;
+    margin-bottom: 1rem;
   }
 }

@@ -15,6 +15,8 @@ import landing3d from './assets/landing.glb';
 import {mainPage} from './pages/mainPage'
 import {webshopPage} from './pages/webshopPage'
 import {contactPage} from './pages/contactPage'
+import {landingPage} from './pages/landingPage'
+import {customPage} from './pages/customPage'
 
 // these need to be accessed inside more than one function so we'll declare them first
 let container;
@@ -27,7 +29,7 @@ let activeObj;
 function init() {
   container = document.querySelector( '#scene-container' );
   scene = new THREE.Scene();
-  scene.fog = new THREE.Fog('#02000e', 10, 53);
+  scene.fog = new THREE.Fog('#02000e', 10, 57);
 
   //scene.background = new THREE.Color( 0x8FBCD4 );
  
@@ -146,20 +148,66 @@ const landing = `
 <h1><span class="bb-sec-6">VALAMI</span> </h1>
 <h1><span class="bb-sec-6">VALAMI</span> </h1>
 `
+function sendEmail(){
+  var form = document.getElementById("contactForm");
+  var button = document.getElementById("contactButton");
+  var status = document.getElementById("contactStatus");
 
-const addModelOnClick = (selector,model,content,pos) =>{
+  // Success and Error functions for after the form is submitted
+  
+  function success() {
+    form.reset();
+    button.style = "display: none ";
+    status.innerHTML = "Thanks!";
+  }
+
+  function error() {
+    status.innerHTML = "Oops! There was a problem.";
+  }
+
+  // handle the form submission event
+
+  form.addEventListener("submit", function(ev) {
+    ev.preventDefault();
+    var data = new FormData(form);
+    ajax(form.method, form.action, data, success, error);
+  });
+
+
+// helper function for sending an AJAX request
+
+function ajax(method, url, data, success, error) {
+  var xhr = new XMLHttpRequest();
+  xhr.open(method, url);
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState !== XMLHttpRequest.DONE) return;
+    if (xhr.status === 200) {
+      success(xhr.response, xhr.responseType);
+    } else {
+      error(xhr.status, xhr.response, xhr.responseType);
+    }
+  };
+  xhr.send(data);
+}
+}
+const addModelOnClick = (selector,model,content,pos,contact=false) =>{
   selector.addEventListener('click', (e) => {
     e.preventDefault()
     scene.remove(activeObj)
     loadModels(model,[pos[0],pos[1],pos[2]])
     mainContent.innerHTML = content
+    if (contact) {
+      console.log('hello')
+      sendEmail()
+    }
   })
 }
 
 addModelOnClick(webshopLink,cart3d,webshopPage,[1,-4,1])
-addModelOnClick(landingLink,landing3d,landing,[1,-4.5,-1])
-addModelOnClick(customLink,camera3d,landing,[1,-1,-1])
-addModelOnClick(contactLink,email3d,contactPage,[3,-4,0])
+addModelOnClick(landingLink,landing3d,landingPage,[1,-4.5,-1])
+addModelOnClick(customLink,camera3d,customPage,[1,-1,-1])
+addModelOnClick(contactLink,email3d,contactPage,[3,-4,0],true)
 addModelOnClick(logo,buildings3d,mainPage,[0,-2,0])
 
 
@@ -178,3 +226,6 @@ Array.from(menuButtons).forEach(function(element) {
     menuList.classList.remove('side-menu_ul_phone')
   });
 });
+
+
+
