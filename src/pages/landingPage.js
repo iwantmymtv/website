@@ -1,7 +1,3 @@
-import landing1 from '../img/landing1.gif'
-import landing2 from '../img/landing2.gif'
-import landing3 from '../img/landing3.gif'
-import landing4 from '../img/landing4.gif'
 
 export const landingPage = `
 <h1><span class="bb-sec-6 ">LANDING PAGE</span> </h1>
@@ -24,16 +20,16 @@ export const landingPage = `
         <div id="landingCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="${landing1}" class="d-block w-100" alt="...">
+            <img src="https://firebasestorage.googleapis.com/v0/b/peter-4de1d.appspot.com/o/landing1.gif?alt=media&token=671c7cc8-d44c-459f-b44c-577be04af381" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="${landing2}" class="d-block w-100" alt="...">
+            <img src="https://firebasestorage.googleapis.com/v0/b/peter-4de1d.appspot.com/o/landing2.gif?alt=media&token=7183d0e6-6543-4620-9e80-cbde58d56160" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="${landing3}" class="d-block w-100" alt="...">
+            <img src="https://firebasestorage.googleapis.com/v0/b/peter-4de1d.appspot.com/o/landing3.gif?alt=media&token=e7f453bb-366d-4bb2-ae1e-9f9c1010471f" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-          <img src="${landing4}" class="d-block w-100" alt="...">
+          <img src="https://firebasestorage.googleapis.com/v0/b/peter-4de1d.appspot.com/o/landing4.gif?alt=media&token=7e29a991-cb83-4bad-a6dd-585afddbe67d" class="d-block w-100" alt="...">
         </div>
          
         </div>

@@ -1,7 +1,3 @@
-import blade from '../img/blade.jpg'
-import cus1 from '../img/cus1.gif'
-import cus2 from '../img/cus2.gif'
-import cus3 from '../img/cus3.gif'
 
 export const webshopPage = `
 <div class="ws ">
@@ -36,13 +32,13 @@ export const webshopPage = `
   <div id="webshopCarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="${cus1}" class="d-block w-100" alt="...">
+      <img src="https://firebasestorage.googleapis.com/v0/b/peter-4de1d.appspot.com/o/cus1.gif?alt=media&token=bc804297-e53b-426a-89ae-feda25f42f75" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="${cus2}" class="d-block w-100" alt="...">
+      <img src="https://firebasestorage.googleapis.com/v0/b/peter-4de1d.appspot.com/o/cus2.gif?alt=media&token=839bd217-343c-4a22-a59f-7549399e8091" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="${cus3}" class="d-block w-100" alt="...">
+      <img src="https://firebasestorage.googleapis.com/v0/b/peter-4de1d.appspot.com/o/cus3.gif?alt=media&token=74712bec-9cd6-420e-87dd-7871872f3f99" class="d-block w-100" alt="...">
     </div>
    
   </div>

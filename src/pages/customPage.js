@@ -1,4 +1,3 @@
-import custom from '../img/custom.gif'
 
 export const customPage = `
   <div class=-mainText">
@@ -23,7 +22,7 @@ export const customPage = `
   <div id="webshopCarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="${custom}" class="d-block w-100" alt="...">
+      <img src="https://firebasestorage.googleapis.com/v0/b/peter-4de1d.appspot.com/o/custom.gif?alt=media&token=743dad56-3d8b-4dd1-ad8f-8dab73d1142c" class="d-block w-100" alt="...">
     </div>
  
    

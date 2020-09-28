@@ -67,22 +67,21 @@ function createLights() {
   scene.add( ambientLight, mainLight );
 }
 
-function loadModels(obj3d=buildings3d,objPos = [0,-2,0]) {
+function loadModels(obj3d=buildings3d,objPos = [2,-3,2]) {
   const loader = new GLTFLoader();
   // so that they can be individually placed around the scene
   const onLoad = ( gltf, position ) => {
-    console.log(gltf)
+    scene.remove(activeObj)
     activeObj = gltf.scene.children[0];
     activeObj.position.copy( position );
     scene.add( activeObj );
   };
   // the loader will report the loading progress to this function
   const onProgress = () => {
-    console.log('loaded')
   };
   // the loader will send any error messages to this function, and we'll log
   // them to to console
-  const onError = ( errorMessage ) => { console.log( errorMessage ); };
+  const onError = ( errorMessage ) => {  };
   // so don't make any assumption about which one will finish loading first
   const objPosition = new THREE.Vector3( objPos[0],objPos[1],objPos[2] );
   loader.load(obj3d, gltf => onLoad( gltf, objPosition ), onProgress, onError );  
@@ -138,16 +137,6 @@ const mainContent = document.getElementById('main-content')
 const logo = document.getElementById('logo')
 
 
-
-const landing = `
-<h3><span class="bb-sec-6 ">LANDING PAGE</span> </h3>
-<h3><span class="bb-sec-6 ">LANDING PAGE</span> </h3>
-
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio fugit quasi praesentium consectetur repudiandae! Quos fugiat aliquam, iusto reprehenderit distinctio itaque optio architecto molestiae blanditiis tempore ipsum voluptatum dicta, consequatur sint, labore facere nam possimus corporis magnam. Veritatis aliquid placeat minus fugit exercitationem cupiditate, in animi ea expedita magnam. Odit officiis nostrum sunt vitae quis.
-</p>
-<h1><span class="bb-sec-6">VALAMI</span> </h1>
-<h1><span class="bb-sec-6">VALAMI</span> </h1>
-`
 function sendEmail(){
   var form = document.getElementById("contactForm");
   var button = document.getElementById("contactButton");
@@ -198,7 +187,6 @@ const addModelOnClick = (selector,model,content,pos,contact=false) =>{
     loadModels(model,[pos[0],pos[1],pos[2]])
     mainContent.innerHTML = content
     if (contact) {
-      console.log('hello')
       sendEmail()
     }
   })
@@ -208,7 +196,7 @@ addModelOnClick(webshopLink,cart3d,webshopPage,[1,-4,1])
 addModelOnClick(landingLink,landing3d,landingPage,[1,-4.5,-1])
 addModelOnClick(customLink,camera3d,customPage,[1,-1,-1])
 addModelOnClick(contactLink,email3d,contactPage,[3,-4,0],true)
-addModelOnClick(logo,buildings3d,mainPage,[0,-2,0])
+addModelOnClick(logo,buildings3d,mainPage,[2,-3,2])
 
 
 const burger = document.getElementById('burger')

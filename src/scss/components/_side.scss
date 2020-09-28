@@ -57,9 +57,9 @@
       }
     }
     & svg{
-      width: 12rem;
+      width: 20rem;
       @include mq("desktop",max) {
-        width: 8rem;
+        width: 13rem;
       }
     }
     @include mq("desktop",max) {
