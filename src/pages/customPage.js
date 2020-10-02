@@ -1,23 +1,23 @@
 
 export const customPage = `
   <div class=-mainText">
-    <h1><span class="bb-sec-6 ">EGYÉB</span> </h1>
-    <h1><span class="bb-sec-6 ">WEBES</span> </h1>
-    <h1><span class="bb-sec-6">MEGOLDÁSOK</span> </h1>
+    <h1><span class="bb-sec-6 "data-mlr-text>EGYÉB</span> </h1>
+    <h1><span class="bb-sec-6 "data-mlr-text>WEBES</span> </h1>
+    <h1><span class="bb-sec-6"data-mlr-text>MEGOLDÁSOK</span> </h1>
   </div>
   <div class="ws-h5">
   <ul>
-    <li><h4 >Például:</h4></li>
-    <li><h6>-Előfizetéses rendszerek</h6></li>
-    <li><h6>-Fórumok,szociális oldalak,blogok</h6></li>
-    <li><h6>-Tanfolyam oldalak</h6></li>
-    <li><h6>-Egyéb egyedi ötletek</h6></li>
+    <li><h4 data-mlr-text>Például:</h4></li>
+    <li><h6 data-mlr-text>-Előfizetéses oldalak</h6></li>
+    <li><h6 data-mlr-text>-Fórumok,szociális oldalak,blogok</h6></li>
+    <li><h6 data-mlr-text>-Tanfolyam oldalak</h6></li>
+    <li><h6 data-mlr-text>-Egyéb egyedi ötletek</h6></li>
 
   </ul>
   </div>  
 
   
-  <h3><span >NÉHÁNY REFERENCIA:</span> </h3>
+  <h3><span data-mlr-text>NÉHÁNY REFERENCIA:</span> </h3>
     <section id="slider">
   <div id="webshopCarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">

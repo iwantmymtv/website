@@ -1,6 +1,6 @@
 export const contactPage = `
     <div class="contact">
-    <h1 class="bb-sec-6 ">KAPCSOLAT </h1>
+    <h1 class="bb-sec-6 " data-mlr-text>KAPCSOLAT</h1>
     <h5>peter.taught@gmail.com</h5>
     <form id="contactForm" action="https://formspree.io/xqkgaeog" method="POST">
       <div class="input-group">
@@ -8,15 +8,15 @@ export const contactPage = `
         <input type="email" name="_replyto">
       </div>
       <div class="input-group">
-        <label for="subject">Tárgy</label>
+        <label for="subject" data-mlr-text>Tárgy</label>
         <input type="text" name="subject">
       </div>
       <div class="input-group">
-        <label for="message">Üzenet</label>
+        <label for="message" data-mlr-text>Üzenet</label>
         <textarea name="message" id="" cols="30" rows="10"></textarea>
       </div>
       <div class="input-group">
-      <button id="contactButton" class="button button16">Küldés</button
+      <button id="contactButton" class="button button16" data-mlr-text>Küldés</button
       </div>
     </form>
     <h5 id="contactStatus"></h5>

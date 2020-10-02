@@ -2,32 +2,32 @@
 export const webshopPage = `
 <div class="ws ">
   <div class="ws-mainText">
-    <h1><span class="bb-sec-6 ">EGYEDI</span> </h1>
-    <h1><span class="bb-sec-6">WEBSHOPOK</span> </h1>
+    <h1><span data-mlr-text class="bb-sec-6 ">EGYEDI</span> </h1>
+    <h1><span data-mlr-text class="bb-sec-6">WEBSHOPOK</span> </h1>
   </div>
   <div class="ws-h5">
   <ul>
-    <li><h4 >Miért válassz engem?</h4></li>
-    <li><h6>-Ha meg akarod valósítani az elképzeléseided korlátok nélkül</h6></li>
-    <li><h6>-Ha gyors, modern,korszerű megoldást szeretnél</h6></li>
-    <li><h6>-Ha kevés terméked van</h6></li>
-    <li><h6>-Ha sok terméked van</h6></li>
-    <li><h6>-Ha az ötletedethez a wordpress vagy shopify nem alkalmas </h6></li>
+    <li><h4 data-mlr-text>Miért válassz engem?</h4></li>
+    <li><h6 data-mlr-text>-Ha meg akarod valósítani az elképzeléseided korlátok nélkül</h6></li>
+    <li><h6 data-mlr-text>-Ha az ötletedethez a woocommerce vagy shopify nem alkalmas</h6></li>
+    <li><h6 data-mlr-text>-Ha gyors, modern,korszerű megoldást szeretnél</h6></li>
+    <li><h6 data-mlr-text>-Ha kevés terméked van</h6></li>
+    <li><h6 data-mlr-text>-Ha sok terméked van</h6></li>
 
   </ul>
   </div>  
   <div class="ws-h5">
   <ul>
-    <li><h4 >Milyen technológiákkal dolgozom?</h4></li>
-    <li><h6> -Backend: Django (python), DjangoREST(rest api-hoz), GraphQL </h6></li>
-    <li><h6> -Frontend:  React, Redux, VanilliaJS, Django template, </h6></li>
-    <li><h6> -UI/UX: Sass, CSS, Ant Design, Material Design,Bootstrap </h6></li>
-    <li><h6> -Hosting: Nginx, VPS, AWS, Docker </h6></li>
+    <li><h4 data-mlr-text>Milyen technológiákkal dolgozom?</h4></li>
+    <li><h6 data-mlr-text> -Backend: Django (python), DjangoREST(rest API-hoz), GraphQL</h6></li>
+    <li><h6 > -Frontend:  React, Redux, VanilliaJS, Django template, </h6></li>
+    <li><h6 > -UI/UX: Sass, CSS, Ant Design, Material Design,Bootstrap </h6></li>
+    <li><h6 > -Hosting: Nginx, VPS, AWS, Docker </h6></li>
 
     </ul>
   </div>
   
-  <h3><span >NÉHÁNY REFERENCIA:</span> </h3>
+  <h3><span data-mlr-text >NÉHÁNY REFERENCIA:</span> </h3>
   <section id="slider">
   <div id="webshopCarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">

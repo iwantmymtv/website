@@ -4,6 +4,9 @@ import { GLTFLoader} from './examples/jsm/loaders/GLTFLoader'
 
 import * as THREE from 'three';
 
+//translation
+import {MLstrings,mlCodes} from './translations'
+
 //3d models
 import buildings3d from './assets/buildings.glb';
 import cart3d from './assets/cart.glb';
@@ -17,6 +20,8 @@ import {webshopPage} from './pages/webshopPage'
 import {contactPage} from './pages/contactPage'
 import {landingPage} from './pages/landingPage'
 import {customPage} from './pages/customPage'
+
+var mlrLangInUse;
 
 // these need to be accessed inside more than one function so we'll declare them first
 let container;
@@ -180,12 +185,23 @@ function ajax(method, url, data, success, error) {
   xhr.send(data);
 }
 }
+
 const addModelOnClick = (selector,model,content,pos,contact=false) =>{
   selector.addEventListener('click', (e) => {
+   
     e.preventDefault()
     scene.remove(activeObj)
     loadModels(model,[pos[0],pos[1],pos[2]])
     mainContent.innerHTML = content
+    mlr({
+      dropID: "mbPOCControlsLangDrop",
+      stringAttribute: "data-mlr-text",
+      chosenLang: mlrLangInUse,
+      mLstrings: MLstrings,
+      countryCodes: true,
+      countryCodeData: mlCodes,
+      dynamicData: true,
+  })
     if (contact) {
       sendEmail()
     }
@@ -217,3 +233,89 @@ Array.from(menuButtons).forEach(function(element) {
 
 
 
+// Global var :(
+
+  var mlr = function({
+      dropID = "mbPOCControlsLangDrop",
+      stringAttribute = "data-mlr-text",
+      chosenLang = "Magyar",
+      mLstrings = MLstrings,
+      countryCodes = false,
+      countryCodeData = [],
+      dynamicData = false,
+  } = {}) {
+      const root = document.documentElement;
+  
+      var listOfLanguages = Object.keys(mLstrings[0]);
+      mlrLangInUse = chosenLang;
+      function translateStrings(){
+        mlrLangInUse = mbPOCControlsLangDrop[mbPOCControlsLangDrop.selectedIndex].value;
+              resolveAllMLStrings();
+              // Here we update the 2-digit lang attribute if required
+              if (countryCodes === true) {
+                  if (!Array.isArray(countryCodeData) || !countryCodeData.length) {
+                      console.warn("Cannot access strings for language codes");
+                      return;
+                  }
+                  root.setAttribute("lang", updateCountryCodeOnHTML().code);
+              }
+      }
+      (function createMLDrop() {
+          var mbPOCControlsLangDrop = document.getElementById(dropID);
+          // Reset the menu
+          mbPOCControlsLangDrop.innerHTML = "";
+          // Now build the options
+          listOfLanguages.forEach((lang, langidx) => {
+              let HTMLoption = document.createElement("option");
+              HTMLoption.value = lang;
+              HTMLoption.textContent = lang;
+              mbPOCControlsLangDrop.appendChild(HTMLoption);
+              if (lang === chosenLang) {
+                  mbPOCControlsLangDrop.value = lang;
+              }
+          });
+          mbPOCControlsLangDrop.addEventListener("change", function(e) {
+            translateStrings()
+          });
+          if (dynamicData){
+            translateStrings()
+          }
+      })();
+  
+      function updateCountryCodeOnHTML() {
+          return countryCodeData.find(this2Digit => this2Digit.name === mlrLangInUse);
+      }
+  
+      function resolveAllMLStrings() {
+          let stringsToBeResolved = document.querySelectorAll(`[${stringAttribute}]`);
+          stringsToBeResolved.forEach(stringToBeResolved => {
+              let originaltextContent = stringToBeResolved.textContent;
+              let resolvedText = resolveMLString(originaltextContent, mLstrings);
+              stringToBeResolved.textContent = resolvedText;
+          });
+      }
+  };
+  
+  function resolveMLString(stringToBeResolved, mLstrings) {
+      var matchingStringIndex = mLstrings.find(function(stringObj) {
+          // Create an array of the objects values:
+          let stringValues = Object.values(stringObj);
+          // Now return if we can find that string anywhere in there
+          return stringValues.includes(stringToBeResolved);
+      });
+      if (matchingStringIndex) {
+          return matchingStringIndex[mlrLangInUse];
+      } else {
+          // If we don't have a match in our language strings, return the original
+          return stringToBeResolved;
+      }
+  }
+  
+  mlr({
+      dropID: "mbPOCControlsLangDrop",
+      stringAttribute: "data-mlr-text",
+      chosenLang: "Magyar",
+      mLstrings: MLstrings,
+      countryCodes: true,
+      countryCodeData: mlCodes,
+  });

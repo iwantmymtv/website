@@ -2,19 +2,18 @@
 export const landingPage = `
 <h1><span class="bb-sec-6 ">LANDING PAGE</span> </h1>
 
-<p>A landing oldal egy weboldal olyan oldala, ahol általában egy űrlap segítségével információt szeretnénk begyűjteni a látogatótól. Ez az az oldal, ahová a látogató „landol”, miután rákattintott egy hirdetésre, egy e-mailben található linkre, egy Facebookon megosztott ajánlóra, vagy bármi másra. A landing oldalon a látogató általában egyéb tartalmak mellett egy űrlappal is találkozik, aminek kitöltésével igénybe tudja venni az ott felkínált lehetőséget. pl. feliratkozhat a hírlevélre, letölthet egy tanulmányt, ajánlatot kérhet, vagy vásárolhat. Miután a megfelelő adatokkal kitöltötte az űrlapot, a látogató az adataival együtt (pl. az ajánlatkérés adataival) bekerül a cég adatbázisába, vagy egyszerűbb esetben kap róla a cég egy e-mailt. - WIKIPEDIA
-</p>
+<p data-mlr-text>A landing oldal egy weboldal olyan oldala, ahol általában egy űrlap segítségével információt szeretnénk begyűjteni a látogatótól. Ez az az oldal, ahová a látogató „landol”, miután rákattintott egy hirdetésre, egy e-mailben található linkre, egy Facebookon megosztott ajánlóra, vagy bármi másra. A landing oldalon a látogató általában egyéb tartalmak mellett egy űrlappal is találkozik, aminek kitöltésével igénybe tudja venni az ott felkínált lehetőséget. pl. feliratkozhat a hírlevélre, letölthet egy tanulmányt, ajánlatot kérhet, vagy vásárolhat. Miután a megfelelő adatokkal kitöltötte az űrlapot, a látogató az adataival együtt (pl. az ajánlatkérés adataival) bekerül a cég adatbázisába, vagy egyszerűbb esetben kap róla a cég egy e-mailt. - WIKIPEDIA</p>
 <div class="ws-h5">
   <ul>
-    <li><h4 >Milyen technológiákkal dolgozom?</h4></li>
-    <li><h6> -Backend(ha szükséges): Django,Firebase </h6></li>
+    <li><h4 data-mlr-text>Milyen technológiákkal dolgozom?</h4></li>
+    <li><h6 data-mlr-text> -Backend(ha szükséges): Django,Firebase</h6></li>
     <li><h6> -Frontend:  React, Redux, VanilliaJS</h6></li>
     <li><h6> -UI/UX: Sass, CSS, Ant Design, Material Design,Bootstrap,Photoshop</h6></li>
 
 
     </ul>
   </div>
-<h3><span >NÉHÁNY REFERENCIA:</span> </h3>
+<h3><span data-mlr-text>NÉHÁNY REFERENCIA:</span> </h3>
         </div>
         <section >
         <div id="landingCarousel" class="carousel slide" data-ride="carousel">
